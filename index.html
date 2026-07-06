@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
 /* ==========================================================================
    Swiss Farms — Coming Soon / Careers
    Premium grocery-brand design system
@@ -740,7 +741,7 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; }
 @media (max-width: 960px){
   :root{ --section-pad: 100px; }
   .story-grid{ grid-template-columns: 1fr; }
-  .story-art{ order:-1; max-width:380px; margin:0 auto; }
+  .story-art{ order:-1; width:100%; max-width:none; }
   .perks-grid{ grid-template-columns: repeat(2, 1fr); }
   .teaser-grid{ grid-template-columns: 1fr; text-align:center; }
   .teaser-grid p{ margin: 0 auto; }
@@ -753,8 +754,8 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; }
 
 @media (max-width: 720px){
   .site-footer-mini .container{ flex-direction:column; text-align:center; }
-  .hero-video{ object-fit: contain; background: var(--ink); }
-  .subscribe-video{ object-fit: contain; background: var(--ink); }
+  .hero-video{ object-fit: cover; }
+  .subscribe-video{ object-fit: cover; }
   .perks-grid{ grid-template-columns: 1fr; }
   .subscribe-card{ padding: 26px 22px; }
   .subscribe-form{ flex-direction:column; align-items:stretch; gap:22px; }
@@ -767,10 +768,14 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; }
   *{ animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
+
+.page-view{ display:none; }
+.page-view.is-active{ display:block; }
 </style>
 </head>
 <body>
 
+<div id="page-home" class="page-view is-active">
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="hero">
   <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://swissfarmstores.com/wp-content/uploads/2026/07/first-frame-swiss-.jpg">
@@ -899,8 +904,184 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; }
     </nav>
   </div>
 </footer>
+</div>
+
+<div id="page-careers" class="page-view">
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="hero-rule top"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-vignette"></div>
+  <div class="container" style="position:relative; z-index:2;">
+    <a href="index.html" class="page-hero-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      Swiss Farms
+    </a>
+    <span class="eyebrow eyebrow--on-dark eyebrow--center">We're Hiring</span>
+    <h1>Join the <em>Swiss Farms</em> Crew</h1>
+    <p>Help us bring Philadelphia's iconic drive-thru market back to the block. We're building our opening team now — flexible shifts, real growth, and a neighborhood that already loves us.</p>
+  </div>
+  <div class="hero-rule bottom"></div>
+</section>
+
+<!-- ===================== PERKS ===================== -->
+<section class="perks">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow--center">Why Swiss Farms</span>
+      <h2 class="section-tag">Good People,<br>Good Benefits</h2>
+    </div>
+    <div class="perks-grid">
+      <div class="perk-card reveal">
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+        <h4>Flexible Schedules</h4>
+        <p>Shifts that work around school and life</p>
+      </div>
+      <div class="perk-card reveal">
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3 6 7 1-5 5 1.5 7L12 18l-6.5 3L7 14 2 9l7-1z"/></svg></div>
+        <h4>Employee Discount</h4>
+        <p>A perk on every visit, every day</p>
+      </div>
+      <div class="perk-card reveal">
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <h4>Room to Grow</h4>
+        <p>Clear paths from crew member to management</p>
+      </div>
+      <div class="perk-card reveal">
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h4>Referral Bonus</h4>
+        <p>Bring a friend onto the crew, get rewarded</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OPENINGS ===================== -->
+<section class="openings" id="openings">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow--center">Open Roles</span>
+      <h2 class="section-tag">Sample Openings</h2>
+      <p class="section-sub" style="margin:0 auto;">Hiring is rolling as we near launch. Here's a look at the roles we're building our opening team around.</p>
+    </div>
+
+    <div class="job-list">
+
+      <div class="job-row reveal">
+        <span class="job-index">01</span>
+        <div class="job-main">
+          <h3>Drive-Thru Attendant</h3>
+          <p class="job-desc">Greet customers at the window, take orders, and keep the line moving with Swiss Farms' signature fast, considered service.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Store Ops</span>
+          <span class="job-tag">Part-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Drive-Thru Attendant">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="job-row reveal">
+        <span class="job-index">02</span>
+        <div class="job-main">
+          <h3>Store Associate</h3>
+          <p class="job-desc">Stock shelves, manage inventory, and keep the store running smoothly — both in-store and at the drive-thru window.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Store Ops</span>
+          <span class="job-tag">Full-Time / Part-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Store Associate">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="job-row reveal">
+        <span class="job-index">03</span>
+        <div class="job-main">
+          <h3>Shift Supervisor</h3>
+          <p class="job-desc">Lead a shift crew, handle scheduling and cash management, and make sure every customer drives off happy.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Management</span>
+          <span class="job-tag">Full-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Shift Supervisor">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="job-row reveal">
+        <span class="job-index">04</span>
+        <div class="job-main">
+          <h3>Assistant Store Manager</h3>
+          <p class="job-desc">Support day-to-day store operations, coach the team, and help deliver the Swiss Farms experience neighbors have trusted since 1968.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Management</span>
+          <span class="job-tag">Full-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Assistant Store Manager">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="job-row reveal">
+        <span class="job-index">05</span>
+        <div class="job-main">
+          <h3>Warehouse &amp; Distribution Associate</h3>
+          <p class="job-desc">Keep every store stocked — receive, sort, and route fresh dairy and grab-and-go inventory across our Philly locations.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Distribution</span>
+          <span class="job-tag">Full-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Warehouse & Distribution Associate">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="job-row reveal">
+        <span class="job-index">06</span>
+        <div class="job-main">
+          <h3>Marketing Coordinator</h3>
+          <p class="job-desc">Help tell the Swiss Farms story across social, email, and in-store — from grand-opening buzz to everyday neighborhood love.</p>
+        </div>
+        <div class="job-meta">
+          <span class="job-tag dept">Corporate</span>
+          <span class="job-tag">Full-Time · Philadelphia, PA</span>
+        </div>
+        <a class="btn-text job-apply" href="mailto:careers@swissfarms.com?subject=Application: Marketing Coordinator">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MINI FOOTER ===================== -->
+<footer class="site-footer-mini">
+  <div class="container">
+    <span>&copy; 2026 Swiss Farms. All rights reserved.</span>
+    <nav class="footer-links">
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="accessibility.html">Accessibility (ADA)</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+</div>
 
 <script>
+
 // ==========================================================================
 // Swiss Farms — shared site behavior
 // ==========================================================================
@@ -980,6 +1161,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+
+/* ---- Simple two-page router (Coming Soon <-> Careers) ---- */
+(function(){
+  var pages = { home: document.getElementById('page-home'), careers: document.getElementById('page-careers') };
+  function showPage(name){
+    Object.keys(pages).forEach(function(key){
+      pages[key].classList.toggle('is-active', key === name);
+    });
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (href === 'careers.html') {
+      e.preventDefault();
+      showPage('careers');
+      history.pushState(null, '', '#careers');
+    } else if (href === 'index.html') {
+      e.preventDefault();
+      showPage('home');
+      history.pushState(null, '', '#home');
+    }
+  });
+  window.addEventListener('popstate', function(){
+    showPage(location.hash === '#careers' ? 'careers' : 'home');
+  });
+  if (location.hash === '#careers') showPage('careers');
+})();
 </script>
 </body>
 </html>
